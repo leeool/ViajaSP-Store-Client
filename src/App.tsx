@@ -1,7 +1,14 @@
+import { Container, MainContainer } from "@style/Styled"
 import React from "react"
 
 const App = () => {
-  return <div>App</div>
+  return (
+    <MainContainer>
+      <Container>
+        <h1>Hello World</h1>
+      </Container>
+    </MainContainer>
+  )
 }
 
 export default App
