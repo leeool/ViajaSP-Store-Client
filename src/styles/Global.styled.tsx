@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
     text-decoration: none;
     font-family: "Readex Pro", sans-serif;
+    font-size: 1rem;
   }
 
   img {
@@ -19,6 +20,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${({ theme }) => theme.bg.white100};
+    background-color: ${({ theme }) => theme.bg.white200};
   }
 `
