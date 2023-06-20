@@ -29,7 +29,7 @@ const arrows = {
 const SlideShow = ({ children }: Props) => {
   return (
     <SlideContainer>
-      <Slide indicators={true} {...arrows}>
+      <Slide indicators={true} {...arrows} transitionDuration={750}>
         {children}
       </Slide>
     </SlideContainer>

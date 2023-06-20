@@ -11,7 +11,7 @@ const Image = ({ src }: Props) => {
   return (
     <>
       <Img src={src} alt="" loaded={loaded} onLoad={() => setLoaded(true)} />
-      <Fallback />
+      {!loaded && <Fallback />}
     </>
   )
 }

@@ -20,9 +20,10 @@ export const Content = styled.div`
     z-index: 0;
   }
 
+
   img {
     grid-area: 1 / -1;
-    transition: scale 0.3s ease-in-out;
+    transition: scale 0.3s ease-in-out, opacity 0.5s ease;  
   }
 
   &:hover img {
@@ -40,6 +41,11 @@ export const Content = styled.div`
 
     &:hover .info {
       transform: scale(1);
+    }
+
+    &::after {
+      box-shadow: inset 100px -50px 100px 0px rgba(0, 0, 0, 0.6),
+      inset -25px 0px 50px 0px rgba(0, 0, 0, 0.6);
     }
   }
 `
