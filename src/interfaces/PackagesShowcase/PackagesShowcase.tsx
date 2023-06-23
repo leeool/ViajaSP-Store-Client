@@ -5,6 +5,7 @@ import { useQuery } from "react-query"
 import axiosInstance from "@/API/axiosInstance"
 import Image from "@component/Image/Image"
 import { Title } from "@component/Text"
+import SpinnerLoading from "@component/Loading/SpinnerLoading"
 
 const PackagesShowcase = () => {
   const { data } = useQuery<ITripPackage[]>({
@@ -14,7 +15,7 @@ const PackagesShowcase = () => {
     }
   })
 
-  if (!data) return <h1>carregando...</h1>
+  if (!data) return <SpinnerLoading />
   return (
     <SlideShow>
       {data.map((tripPackage) => (

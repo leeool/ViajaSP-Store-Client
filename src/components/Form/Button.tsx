@@ -3,6 +3,7 @@ import { variant } from "styled-system"
 
 interface Props {
   variant?: "primary" | "secondary"
+  shape?: "rounded" | "circle"
 }
 
 export const Button = styled.button<Props>`
@@ -13,6 +14,9 @@ export const Button = styled.button<Props>`
   cursor: pointer;
   font-weight: 600;
   border: 2px solid ${({ theme }) => theme.bg.white100};
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
   &:hover {
     background-color: #00429e;
@@ -41,6 +45,18 @@ export const Button = styled.button<Props>`
         "&:hover": {
           backgroundColor: "#f0f0f0"
         }
+      }
+    }
+  })}
+
+  ${variant({
+    prop: "shape",
+    variants: {
+      rounded: {
+        borderRadius: "0.5rem"
+      },
+      circle: {
+        borderRadius: "2rem"
       }
     }
   })}

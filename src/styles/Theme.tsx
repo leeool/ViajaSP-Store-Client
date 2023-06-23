@@ -11,7 +11,7 @@ const theme = {
   bg: {
     white100: "#fff",
     white200: "#f0f0f0",
-    white300: "#c9c9c9",
+    white300: "#b9b9b9",
     blue: "#014AAD",
     yellow: "#F8BC00"
   }

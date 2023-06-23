@@ -20,6 +20,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${({ theme }) => theme.bg.white200};
+    background-color: ${({ theme }) => theme.bg.white100};
   }
 `

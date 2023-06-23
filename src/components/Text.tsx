@@ -9,6 +9,9 @@ interface Props {
 export const Title = styled.h1<Props>`
   font-size: 2rem;
   color: ${({ theme }) => theme.color.white100};
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 
   ${variant({
     prop: "color",
@@ -41,8 +44,18 @@ export const Title = styled.h1<Props>`
         fontSize: "2.5rem"
       },
       "2xl": {
-        fontSize: "3rem"
+        fontSize: "3rem",
+        "@media (max-width: 768px)": {
+          fontSize: "2rem",
+          gap: "0.5rem"
+        }
       }
     }
   })}
+`
+
+export const Paragraph = styled.p<Props>`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.bg.white300};
+  gap: 1rem;
 `

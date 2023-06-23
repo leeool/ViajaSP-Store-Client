@@ -6,6 +6,11 @@ export const Container = styled.main`
   margin: 0 auto;
   flex: 1;
   padding: 1rem;
+  justify-content: center;
+
+  .loading {
+    justify-self: center;
+  }
 `
 
 export const MainContainer = styled.div`
