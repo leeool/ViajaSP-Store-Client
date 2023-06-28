@@ -20,11 +20,23 @@ export const VerifyAccount = styled.div`
   background-color: ${({ theme }) => theme.bg.yellow};
   color: ${({ theme }) => theme.color.black};
   padding: 0.5rem 1rem;
-  border-radius: 0 0 0.5rem 0.5rem;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
   text-transform: uppercase;
+
+  span {
+    display: block;
+    font-size: 0.875rem;
+    text-transform: none;
+    font-weight: 400;
+    margin-top: 0.3rem;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `
 
 export const Logo = styled.div`

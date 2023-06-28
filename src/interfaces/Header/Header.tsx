@@ -41,7 +41,10 @@ const Header = () => {
         )}
       </Nav>
       {userData && !userData.verified && (
-        <VerifyAccount>VERIFIQUE A SUA CONTA!</VerifyAccount>
+        <VerifyAccount>
+          VERIFIQUE A SUA CONTA!{" "}
+          <span>enviar e-mail de verificação novamente</span>
+        </VerifyAccount>
       )}
     </Container>
   )
