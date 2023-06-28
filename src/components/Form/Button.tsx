@@ -17,6 +17,7 @@ export const Button = styled.button<Props>`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  justify-content: space-between;
 
   &:hover {
     background-color: #00429e;

@@ -2,17 +2,18 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
 `
 
 export const PackageContainer = styled.div`
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
   width: 100%;
-  scroll-snap-type: x mandatory;
+  justify-items: center;
 
   @media (max-width: 768px) {
-    gap: 1rem;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
   }
 `

@@ -2,7 +2,7 @@ import React from "react"
 import { Container, Fallback, Img } from "./Image.styled"
 
 interface Props {
-  src: string
+  src: string | undefined
 }
 
 const Image = ({ src }: Props) => {

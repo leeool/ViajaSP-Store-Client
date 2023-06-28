@@ -1,5 +1,47 @@
 import styled from "styled-components"
 
+export const Container = styled.div`
+  position: relative;
+`
+
+export const Tag = styled.span`
+  position: absolute;
+  top: 1rem;
+  left: -3rem;
+  transform: rotate(-45deg);
+  width: fit-content;
+  height: fit-content;
+  padding: 0.3rem 1rem;
+  background-color: ${({ theme }) => theme.bg.yellow};
+  z-index: 200;
+  color: ${({ theme }) => theme.color.blue};
+  font-weight: 600;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -29px;
+    top: 0;
+    border-style: solid;
+    border-width: 0 0px 30px 30px;
+    border-color: transparent transparent ${({ theme }) => theme.bg.yellow}
+      transparent;
+    transform: rotate(0deg);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -29px;
+    top: 0;
+    border-style: solid;
+    border-width: 30px 0 0px 30px;
+    border-color: transparent transparent transparent
+      ${({ theme }) => theme.bg.yellow};
+    transform: rotate(0deg);
+  }
+`
+
 export const Content = styled.div`
   display: grid;
   position: relative;
@@ -20,10 +62,10 @@ export const Content = styled.div`
     z-index: 0;
   }
 
-
-  img {
+  img,
+  .skeleton-image-container {
     grid-area: 1 / -1;
-    transition: scale 0.3s ease-in-out, opacity 0.5s ease;  
+    transition: scale 0.3s ease-in-out, opacity 0.5s ease;
   }
 
   &:hover img {
@@ -45,7 +87,7 @@ export const Content = styled.div`
 
     &::after {
       box-shadow: inset 100px -50px 100px 0px rgba(0, 0, 0, 0.6),
-      inset -25px 0px 50px 0px rgba(0, 0, 0, 0.6);
+        inset -25px 0px 50px 0px rgba(0, 0, 0, 0.6);
     }
   }
 `

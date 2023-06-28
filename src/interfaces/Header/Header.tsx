@@ -1,10 +1,12 @@
 import React from "react"
-import { Container, Logo, Nav } from "./Header.styled"
+import { Container, Logo, Nav, VerifyAccount } from "./Header.styled"
 import { Button } from "@component/Form/Button"
 import { Link, useNavigate } from "react-router-dom"
+import useUserStore from "@/stores/useUserStore"
 
 const Header = () => {
   const nav = useNavigate()
+  const userData = useUserStore((state) => state.userData)
 
   return (
     <Container>
@@ -30,10 +32,17 @@ const Header = () => {
         </Logo>
       </Link>
       <Nav>
-        <Button variant="secondary" onClick={() => nav("/entrar")}>
-          Entrar
-        </Button>
+        {userData ? (
+          <Button variant="secondary">Minha conta</Button>
+        ) : (
+          <Button variant="secondary" onClick={() => nav("/entrar")}>
+            Entrar
+          </Button>
+        )}
       </Nav>
+      {userData && !userData.verified && (
+        <VerifyAccount>VERIFIQUE A SUA CONTA!</VerifyAccount>
+      )}
     </Container>
   )
 }

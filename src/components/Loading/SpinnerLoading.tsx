@@ -6,8 +6,8 @@ const SpinnerLoading = () => {
     <ReactLoading
       type="spin"
       color="#F8BC00"
-      height={50}
-      width={50}
+      height={"100%"}
+      width={"100%"}
       className="loading"
     />
   )
