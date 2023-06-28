@@ -13,7 +13,7 @@ export const Tag = styled.span`
   height: fit-content;
   padding: 0.3rem 1rem;
   background-color: ${({ theme }) => theme.bg.yellow};
-  z-index: 200;
+  z-index: 10;
   color: ${({ theme }) => theme.color.blue};
   font-weight: 600;
   text-transform: uppercase;
