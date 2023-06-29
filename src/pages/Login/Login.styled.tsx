@@ -6,6 +6,12 @@ export const Container = styled.div`
   gap: 3rem;
   align-items: center;
   height: 35rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 1rem;
+  }
 `
 
 export const Background = styled.img`
@@ -33,4 +39,8 @@ export const Column1 = styled.div`
 
 export const Column2 = styled.div`
   align-self: center;
+
+  @media (max-width: 768px) {
+    grid-row: 1 / 2;
+  }
 `

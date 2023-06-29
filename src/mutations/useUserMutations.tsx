@@ -47,3 +47,36 @@ export const useSignInMutation = () => {
 
   return mutation
 }
+
+interface SendEmailProps {
+  email: string
+}
+
+export const useSendEmailMutation = () => {
+  const userData = useUserStore((state) => state.userData)
+
+  const mutate = useMutation({
+    mutationKey: ["sendEmail"],
+    mutationFn: async (data: SendEmailProps) => {
+      if (userData && userData.verified)
+        return Promise.reject("User already verified")
+
+      return axiosInstance.post("/auth/verify", data).then((res) => res.data)
+    }
+  })
+
+  return mutate
+}
+
+export const useVerifyEmail = () => {
+  const mutation = useMutation({
+    mutationKey: ["verifyEmail"],
+    mutationFn: async (data: { token: string; id: string }) => {
+      return axiosInstance
+        .get(`/auth/verify?token=${data.token}&id=${data.id}`)
+        .then((res) => res.data)
+    }
+  })
+
+  return mutation
+}

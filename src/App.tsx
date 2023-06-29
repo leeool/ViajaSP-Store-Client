@@ -4,6 +4,7 @@ import { Container, MainContainer } from "@style/Styled"
 import React from "react"
 import { Outlet } from "react-router-dom"
 import { useMeMutation } from "./mutations/useUserMutations"
+import ScrollToTop from "./helpers/ScrollToTop"
 
 const App = () => {
   const me = useMeMutation()
@@ -24,7 +25,9 @@ const App = () => {
     <MainContainer>
       <Header />
       <Container>
-        <Outlet />
+        <ScrollToTop>
+          <Outlet />
+        </ScrollToTop>
       </Container>
       <Footer />
     </MainContainer>

@@ -33,6 +33,11 @@ export const Button = styled.button<Props>`
     cursor: not-allowed;
   }
 
+  .loading {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+
   ${variant({
     variants: {
       primary: {

@@ -8,6 +8,7 @@ import { Title } from "@component/Text"
 import useStore from "@/stores/useStore"
 import Skeleton from "react-loading-skeleton"
 import "react-loading-skeleton/dist/skeleton.css"
+import { Link } from "react-router-dom"
 
 const PackagesShowcase = () => {
   const { data, isLoading } = useQuery<ITripPackage[] | []>({
@@ -30,7 +31,7 @@ const PackagesShowcase = () => {
       <SlideShow>
         {data.map((tripPackage) => (
           <SlideItem key={tripPackage.id}>
-            <Content>
+            <Content as={Link} to={`/viagem/${tripPackage.id}`}>
               <Image src={tripPackage?.city.images[0]} />
               <Info className="info">
                 <p>Pacote família para</p>

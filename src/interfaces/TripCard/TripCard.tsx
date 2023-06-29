@@ -4,6 +4,7 @@ import React from "react"
 import { Container, Content, Price } from "./TripCard.styled"
 import { Button } from "@component/Form/Button"
 import { SearchIcon } from "@primer/octicons-react"
+import { Link } from "react-router-dom"
 
 interface Props {
   tripPackage: ITripPackage
@@ -11,7 +12,7 @@ interface Props {
 
 const TripCard = ({ tripPackage }: Props) => {
   return (
-    <Container>
+    <Container as={Link} to={`/viagem/${tripPackage.id}`}>
       <Image src={tripPackage.city.images[0]} />
       <Content>
         <Title size="lg" as="h3">

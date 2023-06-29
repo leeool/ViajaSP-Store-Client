@@ -4,6 +4,7 @@ import App from "./App"
 import Home from "@page/Home/Home"
 import Login from "@page/Login/Login"
 import Verify from "@page/Verify/Verify"
+import TripPackage from "@page/TripPackage/TripPackage"
 
 const Router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const Router = createBrowserRouter([
       {
         path: "/entrar",
         Component: Login
+      },
+      {
+        path: "/viagem/:id",
+        Component: TripPackage
       }
     ]
   },

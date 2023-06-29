@@ -3,10 +3,24 @@ import { Container, Logo, Nav, VerifyAccount } from "./Header.styled"
 import { Button } from "@component/Form/Button"
 import { Link, useNavigate } from "react-router-dom"
 import useUserStore from "@/stores/useUserStore"
+import { useSendEmailMutation } from "@/mutations/useUserMutations"
 
 const Header = () => {
   const nav = useNavigate()
   const userData = useUserStore((state) => state.userData)
+  const sendVerificationEmail = useSendEmailMutation()
+
+  const handleSendEmail = () => {
+    if (!userData) return
+    sendVerificationEmail.mutate(
+      { email: userData.email },
+      {
+        onSuccess: () => {
+          alert("Email enviado com sucesso!")
+        }
+      }
+    )
+  }
 
   return (
     <Container>
@@ -43,7 +57,9 @@ const Header = () => {
       {userData && !userData.verified && (
         <VerifyAccount>
           VERIFIQUE A SUA CONTA!{" "}
-          <span>enviar e-mail de verificação novamente</span>
+          <span onClick={handleSendEmail}>
+            enviar e-mail de verificação novamente
+          </span>
         </VerifyAccount>
       )}
     </Container>

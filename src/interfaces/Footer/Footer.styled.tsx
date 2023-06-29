@@ -10,6 +10,10 @@ export const Container = styled.div`
   gap: 5rem;
   z-index: 100;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `
 
 export const Logo = styled.div`

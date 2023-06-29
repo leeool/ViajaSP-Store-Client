@@ -10,6 +10,10 @@ export const Container = styled.div`
   justify-content: space-between;
   z-index: 100;
   position: fixed;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `
 
 export const VerifyAccount = styled.div`

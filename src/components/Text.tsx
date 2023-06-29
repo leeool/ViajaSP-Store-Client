@@ -2,7 +2,14 @@ import styled from "styled-components"
 import { variant } from "styled-system"
 
 interface Props {
-  color?: "white" | "yellow" | "blue"
+  color?:
+    | "white100"
+    | "white200"
+    | "white300"
+    | "white400"
+    | "yellow"
+    | "blue"
+    | "black"
   size?: "sm" | "md" | "lg" | "xl" | "2xl"
 }
 
@@ -17,8 +24,20 @@ export const Title = styled.h1<Props>`
   ${variant({
     prop: "color",
     variants: {
-      white: {
+      white100: {
         color: "#fff"
+      },
+      white200: {
+        color: "#f0f0f0"
+      },
+      white300: {
+        color: "#b9b9b9"
+      },
+      white400: {
+        color: "#999"
+      },
+      black: {
+        color: "#212121"
       },
       yellow: {
         color: "#F8BC00"
@@ -36,7 +55,8 @@ export const Title = styled.h1<Props>`
         fontSize: "1rem"
       },
       md: {
-        fontSize: "1.5rem"
+        fontSize: "1.5rem",
+        fontWeight: 500
       },
       lg: {
         fontSize: "2rem",
@@ -58,10 +78,50 @@ export const Title = styled.h1<Props>`
   })}
 `
 
-export const Paragraph = styled.p<Props>`
+interface ParagraphProps {
+  color?:
+    | "white100"
+    | "white200"
+    | "white300"
+    | "white400"
+    | "yellow"
+    | "blue"
+    | "black"
+  size?: "sm" | "md" | "lg" | "xl" | "2xl"
+}
+
+export const Paragraph = styled.p<ParagraphProps>`
   font-size: 1rem;
   color: ${({ theme }) => theme.bg.white300};
   gap: 1rem;
+  line-height: 1.5;
+
+  ${variant({
+    prop: "color",
+    variants: {
+      white100: {
+        color: "#fff"
+      },
+      white200: {
+        color: "#f0f0f0"
+      },
+      white300: {
+        color: "#b9b9b9"
+      },
+      white400: {
+        color: "#999"
+      },
+      black: {
+        color: "#212121"
+      },
+      yellow: {
+        color: "#F8BC00"
+      },
+      blue: {
+        color: "#014AAD"
+      }
+    }
+  })}
 
   ${variant({
     prop: "size",
@@ -79,12 +139,15 @@ export const Paragraph = styled.p<Props>`
         }
       },
       xl: {
-        fontSize: "1.25rem"
+        fontSize: "1.25rem",
+        "@media (max-width: 768px)": {
+          fontSize: "1rem"
+        }
       },
       "2xl": {
         fontSize: "1.5rem",
         "@media (max-width: 768px)": {
-          fontSize: "2rem",
+          fontSize: "1.25rem",
           gap: "1rem"
         }
       }

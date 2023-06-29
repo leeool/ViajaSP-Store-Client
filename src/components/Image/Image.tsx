@@ -1,18 +1,39 @@
-import React from "react"
+import React, { HTMLAttributes } from "react"
 import { Container, Fallback, Img } from "./Image.styled"
+import { StyledComponentProps } from "styled-components/dist/types"
 
-interface Props {
+interface Props
+  extends StyledComponentProps<
+    "web",
+    "img",
+    HTMLAttributes<HTMLImageElement>,
+    never
+  > {
   src: string | undefined
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  props?: StyledComponentProps<
+    "web",
+    "img",
+    HTMLAttributes<HTMLImageElement>,
+    never
+  >
 }
 
-const Image = ({ src }: Props) => {
+const Image = ({ src, as, ...props }: Props) => {
   const [loaded, setLoaded] = React.useState(false)
 
   return (
-    <>
-      <Img src={src} alt="" loaded={loaded} onLoad={() => setLoaded(true)} />
+    <Container className="image-fallback">
+      <Img
+        src={src}
+        alt=""
+        as={as}
+        loaded={loaded}
+        onLoad={() => setLoaded(true)}
+        {...props}
+      />
       {!loaded && <Fallback />}
-    </>
+    </Container>
   )
 }
 

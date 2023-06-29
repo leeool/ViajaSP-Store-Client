@@ -11,6 +11,8 @@ export const Container = styled.main`
 
   .loading {
     justify-self: center;
+    max-width: 4rem;
+    max-height: 4rem;
   }
 `
 

@@ -10,12 +10,14 @@ export const Img = styled.img<Props>`
   object-fit: cover;
   grid-area: 1 / -1;
   opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+  outline: 1px solid #0002;
 `
 
 export const Container = styled.div`
   display: grid;
   width: 100%;
   height: 100%;
+  grid-area: 1 / -1;
 `
 
 export const Fallback = styled.div`
