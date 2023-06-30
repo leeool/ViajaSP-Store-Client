@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  column-gap: 2rem;
   row-gap: 5rem;
 
   @media (max-width: 768px) {
@@ -19,6 +19,7 @@ export const Images = styled.div`
   background-color: ${({ theme }) => theme.bg.white200};
   padding: 0.5rem;
   border-radius: 1rem;
+  align-self: start;
 
   span img {
     border-radius: 0.5rem;
@@ -46,7 +47,7 @@ export const Images = styled.div`
 
 export const Wrapper = styled.div`
   display: grid;
-  align-content: start;
+  align-content: end;
 `
 
 export const Info = styled.div`
@@ -69,5 +70,17 @@ export const Trips = styled.div`
   & > * {
     scroll-snap-align: start;
     flex: 0 0 20rem;
+  }
+`
+
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-self: end;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  button {
+    width: 100%;
   }
 `

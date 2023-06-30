@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Buttons,
   Container,
   Images,
   Info,
@@ -15,6 +16,8 @@ import { format } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import TripCard from "@interface/TripCard/TripCard"
 import SpinnerLoading from "@component/Loading/SpinnerLoading"
+import { Button } from "@component/Form/Button"
+import { BookmarkIcon, PaperAirplaneIcon } from "@primer/octicons-react"
 
 const TripPackage = () => {
   const { data, isLoading } = useShowTripQuery()
@@ -52,6 +55,16 @@ const TripPackage = () => {
             })}
           </Paragraph>
         </Info>
+        <Buttons>
+          <Button shape="rounded" variant="secondary">
+            Favoritar
+            <BookmarkIcon size={18} />
+          </Button>
+          <Button shape="rounded">
+            Reservar
+            <PaperAirplaneIcon size={18} />
+          </Button>
+        </Buttons>
       </Wrapper>
       <RelatedTrips>
         <Title size="2xl" color="blue">

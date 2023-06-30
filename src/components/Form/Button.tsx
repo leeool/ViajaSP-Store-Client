@@ -13,11 +13,11 @@ export const Button = styled.button<Props>`
   border-radius: 2rem;
   cursor: pointer;
   font-weight: 600;
-  border: 2px solid ${({ theme }) => theme.bg.white100};
   display: flex;
   align-items: center;
   gap: 0.5rem;
   justify-content: space-between;
+  border: none;
 
   &:hover {
     background-color: #00429e;
@@ -42,11 +42,11 @@ export const Button = styled.button<Props>`
     variants: {
       primary: {
         backgroundColor: "transparent",
-        color: "#fff",
-        borderColor: "#fff"
+        color: "#fff"
       },
       secondary: {
         backgroundColor: "#fff",
+        border: "2px solid #014AAD ",
         color: "#014AAD",
         "&:hover": {
           backgroundColor: "#f0f0f0"
