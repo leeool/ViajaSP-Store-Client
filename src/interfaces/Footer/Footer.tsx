@@ -1,6 +1,7 @@
 import React from "react"
 import { Container, Content, Item, Logo } from "./Footer.styled"
 import { Title } from "@component/Text"
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
@@ -35,7 +36,7 @@ const Footer = () => {
         </Item>
         <Item>
           <Title size="md">Sobre</Title>
-          <p>Quem somos</p>
+          <Link to={"/sobre"}>Sobre nós</Link>
         </Item>
       </Content>
     </Container>

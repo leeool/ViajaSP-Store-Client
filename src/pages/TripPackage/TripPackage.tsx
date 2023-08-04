@@ -1,9 +1,12 @@
 import React from "react"
 import {
+  About,
   Buttons,
   Container,
   Images,
   Info,
+  Item,
+  Price,
   RelatedTrips,
   Trips,
   Wrapper
@@ -35,25 +38,25 @@ const TripPackage = () => {
           {data.city.name}
         </Title>
         <Info>
-          <Paragraph color="white400">{data.city.about}</Paragraph>
-          <Paragraph color="blue" size="2xl">
-            Apenas R${data.price},00 (pacote família)
-          </Paragraph>
-          <Paragraph color="blue" size="2xl">
-            Transporte {data.transport}
-          </Paragraph>
-          <Paragraph color="blue" size="2xl">
-            Saida{" "}
+          <About color="white400">{data.city.about}</About>
+          <Price>
+            R${data.price},00 <span>(pacote família)</span>
+          </Price>
+          <Item>
+            <span>Transporte:</span> {data.transport}
+          </Item>
+          <Item>
+            <span>Saida: </span>
             {format(new Date(data.departureDate), "dd 'de' MMMM 'de' yyyy", {
               locale: ptBR
             })}
-          </Paragraph>
-          <Paragraph color="blue" size="2xl">
-            Retorno{" "}
+          </Item>
+          <Item>
+            <span>Retorno: </span>
             {format(new Date(data.returnDate), "dd 'de' MMMM 'de' yyyy", {
               locale: ptBR
             })}
-          </Paragraph>
+          </Item>
         </Info>
         <Buttons>
           <Button shape="rounded" variant="secondary">
@@ -71,9 +74,11 @@ const TripPackage = () => {
           Mais viagens
         </Title>
         <Trips>
-          {trips.data?.map((trip) => (
-            <TripCard key={trip.id} tripPackage={trip} />
-          ))}
+          {trips.data
+            ?.filter((trip) => trip.id !== data.id)
+            .map((trip) => (
+              <TripCard key={trip.id} tripPackage={trip} />
+            ))}
         </Trips>
       </RelatedTrips>
     </Container>

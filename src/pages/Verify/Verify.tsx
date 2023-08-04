@@ -27,6 +27,13 @@ const Verify = () => {
         onSuccess: () => {
           alert("Email verificado com sucesso!")
           nav("/")
+        },
+        onError: () => {
+          console.log("Erro ao verificar e-mail.")
+          alert("E-mail já verificado.")
+        },
+        onSettled: () => {
+          console.log("Finalizado.")
         }
       }
     )

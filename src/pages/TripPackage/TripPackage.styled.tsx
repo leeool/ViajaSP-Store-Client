@@ -84,3 +84,33 @@ export const Buttons = styled.div`
     width: 100%;
   }
 `
+
+export const Price = styled.span`
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.color.blue};
+
+  span {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: ${({ theme }) => theme.color.black};
+    opacity: 0.5;
+  }
+`
+
+export const About = styled.div`
+  line-height: 1.5;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.color.black};
+  opacity: 0.5;
+`
+
+export const Item = styled.div`
+  font-size: 1.25rem;
+
+  span {
+    font-size: 1.25rem;
+    color: ${({ theme }) => theme.color.blue};
+    font-weight: 600;
+  }
+`

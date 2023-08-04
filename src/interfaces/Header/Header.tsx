@@ -4,6 +4,7 @@ import { Button } from "@component/Form/Button"
 import { Link, useNavigate } from "react-router-dom"
 import useUserStore from "@/stores/useUserStore"
 import { useSendEmailMutation } from "@/mutations/useUserMutations"
+import Menu from "./Menu"
 
 const Header = () => {
   const nav = useNavigate()
@@ -47,7 +48,7 @@ const Header = () => {
       </Link>
       <Nav>
         {userData ? (
-          <Button variant="secondary">Minha conta</Button>
+          <Menu />
         ) : (
           <Button variant="secondary" onClick={() => nav("/entrar")}>
             Entrar

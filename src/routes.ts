@@ -5,6 +5,7 @@ import Home from "@page/Home/Home"
 import Login from "@page/Login/Login"
 import Verify from "@page/Verify/Verify"
 import TripPackage from "@page/TripPackage/TripPackage"
+import About from "@page/About/About"
 
 const Router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const Router = createBrowserRouter([
       {
         path: "/viagem/:id",
         Component: TripPackage
+      },
+      {
+        path: "/sobre",
+        Component: About
       }
     ]
   },
