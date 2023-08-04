@@ -46,9 +46,18 @@ export const VerifyAccount = styled.div`
 export const Logo = styled.div`
   display: flex;
   align-items: center;
-  font-size: 2rem;
-  font-weight: 500;
+
+  span {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 500;
+  }
   gap: 0.5rem;
+
+  @media (max-width: 400px) {
+    span {
+      display: none;
+    }
+  }
 `
 
 export const Nav = styled.nav`

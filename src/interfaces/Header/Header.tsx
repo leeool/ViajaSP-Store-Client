@@ -43,7 +43,7 @@ const Header = () => {
               fill="#E97142"
             />
           </svg>
-          Viaja SP
+          <span>Viaja SP</span>
         </Logo>
       </Link>
       <Nav>
