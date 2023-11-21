@@ -1,39 +1,39 @@
-import { DefaultTheme } from "styled-components"
+import { DefaultTheme } from "styled-components";
 
-const theme = {
+export const theme = {
   color: {
     white100: "#fff",
     white200: "#c9c9c9",
-    blue: "#014AAD",
-    yellow: "#F8BC00",
-    black: "#212121"
+    primary: "#f6540c",
+    secondary: "#32293d",
+    black: "#212121",
   },
   bg: {
     white100: "#fff",
     white200: "#f0f0f0",
     white300: "#b9b9b9",
-    blue: "#014AAD",
-    yellow: "#F8BC00"
-  }
-}
+    primary: "#f6540c",
+    secondary: "#32293d",
+  },
+};
 
 declare module "styled-components" {
   export interface DefaultTheme {
     color: {
-      white100: string
-      white200: string
-      blue: string
-      yellow: string
-      black: string
-    }
+      white100: string;
+      white200: string;
+      primary: string;
+      secondary: string;
+      black: string;
+    };
     bg: {
-      white100: string
-      white200: string
-      white300: string
-      blue: string
-      yellow: string
-    }
+      white100: string;
+      white200: string;
+      white300: string;
+      primary: string;
+      secondary: string;
+    };
   }
 }
 
-export default theme
+export default theme;

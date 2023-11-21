@@ -1,5 +1,6 @@
-import styled from "styled-components"
-import { variant } from "styled-system"
+import theme from "@style/Theme";
+import styled from "styled-components";
+import { variant } from "styled-system";
 
 interface Props {
   color?:
@@ -7,10 +8,10 @@ interface Props {
     | "white200"
     | "white300"
     | "white400"
-    | "yellow"
-    | "blue"
-    | "black"
-  size?: "sm" | "md" | "lg" | "xl" | "2xl"
+    | "primary"
+    | "secondary"
+    | "black";
+  size?: "sm" | "md" | "lg" | "xl" | "2xl";
 }
 
 export const Title = styled.h1<Props>`
@@ -25,58 +26,58 @@ export const Title = styled.h1<Props>`
     prop: "color",
     variants: {
       white100: {
-        color: "#fff"
+        color: "#fff",
       },
       white200: {
-        color: "#f0f0f0"
+        color: "#f0f0f0",
       },
       white300: {
-        color: "#b9b9b9"
+        color: "#b9b9b9",
       },
       white400: {
-        color: "#999"
+        color: "#999",
       },
       black: {
-        color: "#212121"
+        color: "#212121",
       },
-      yellow: {
-        color: "#F8BC00"
+      secondary: {
+        color: theme.color.secondary,
       },
-      blue: {
-        color: "#014AAD"
-      }
-    }
+      primary: {
+        color: theme.color.primary,
+      },
+    },
   })}
 
   ${variant({
     prop: "size",
     variants: {
       sm: {
-        fontSize: "1rem"
+        fontSize: "1rem",
       },
       md: {
         fontSize: "1.5rem",
-        fontWeight: 500
+        fontWeight: 500,
       },
       lg: {
         fontSize: "2rem",
         "@media (max-width: 768px)": {
-          fontSize: "1.5rem"
-        }
+          fontSize: "1.5rem",
+        },
       },
       xl: {
-        fontSize: "2.5rem"
+        fontSize: "2.5rem",
       },
       "2xl": {
         fontSize: "3rem",
         "@media (max-width: 768px)": {
           fontSize: "2rem",
-          gap: "0.5rem"
-        }
-      }
-    }
+          gap: "0.5rem",
+        },
+      },
+    },
   })}
-`
+`;
 
 interface ParagraphProps {
   color?:
@@ -84,10 +85,10 @@ interface ParagraphProps {
     | "white200"
     | "white300"
     | "white400"
-    | "yellow"
-    | "blue"
-    | "black"
-  size?: "sm" | "md" | "lg" | "xl" | "2xl"
+    | "secondary"
+    | "primary"
+    | "black";
+  size?: "sm" | "md" | "lg" | "xl" | "2xl";
 }
 
 export const Paragraph = styled.p<ParagraphProps>`
@@ -100,57 +101,57 @@ export const Paragraph = styled.p<ParagraphProps>`
     prop: "color",
     variants: {
       white100: {
-        color: "#fff"
+        color: "#fff",
       },
       white200: {
-        color: "#f0f0f0"
+        color: "#f0f0f0",
       },
       white300: {
-        color: "#b9b9b9"
+        color: "#b9b9b9",
       },
       white400: {
-        color: "#999"
+        color: "#999",
       },
       black: {
-        color: "#212121"
+        color: "#212121",
       },
-      yellow: {
-        color: "#F8BC00"
+      secondary: {
+        color: theme.color.secondary,
       },
-      blue: {
-        color: "#014AAD"
-      }
-    }
+      primary: {
+        color: theme.color.primary,
+      },
+    },
   })}
 
   ${variant({
     prop: "size",
     variants: {
       sm: {
-        fontSize: "0.6rem"
+        fontSize: "0.6rem",
       },
       md: {
-        fontSize: "0.875rem"
+        fontSize: "0.875rem",
       },
       lg: {
         fontSize: "1rem",
         "@media (max-width: 768px)": {
-          fontSize: "0.875rem"
-        }
+          fontSize: "0.875rem",
+        },
       },
       xl: {
         fontSize: "1.25rem",
         "@media (max-width: 768px)": {
-          fontSize: "1rem"
-        }
+          fontSize: "1rem",
+        },
       },
       "2xl": {
         fontSize: "1.5rem",
         "@media (max-width: 768px)": {
           fontSize: "1.25rem",
-          gap: "1rem"
-        }
-      }
-    }
+          gap: "1rem",
+        },
+      },
+    },
   })}
-`
+`;

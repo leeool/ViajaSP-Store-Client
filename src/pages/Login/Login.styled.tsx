@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
@@ -12,7 +12,7 @@ export const Container = styled.div`
     align-content: center;
     gap: 1rem;
   }
-`
+`;
 
 export const Background = styled.img`
   position: absolute;
@@ -23,19 +23,19 @@ export const Background = styled.img`
   height: 55em;
   filter: brightness(0.4);
   z-index: -1;
-`
+`;
 
 export const Column1 = styled.div`
   h1 span {
     display: inline;
     font-size: inherit;
-    color: ${({ theme }) => theme.color.yellow};
+    color: ${({ theme }) => theme.color.secondary};
   }
 
   h1 {
     display: block;
   }
-`
+`;
 
 export const Column2 = styled.div`
   align-self: center;
@@ -43,4 +43,4 @@ export const Column2 = styled.div`
   @media (max-width: 768px) {
     grid-row: 1 / 2;
   }
-`
+`;

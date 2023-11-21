@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   About,
   Buttons,
@@ -9,32 +9,32 @@ import {
   Price,
   RelatedTrips,
   Trips,
-  Wrapper
-} from "./TripPackage.styled"
-import { useShowTripQuery, useTripsQuery } from "@/queries/useTripQueries"
-import Image from "@component/Image/Image"
-import { motion } from "framer-motion"
-import { Paragraph, Title } from "@component/Text"
-import { format } from "date-fns"
-import { ptBR } from "date-fns/locale"
-import TripCard from "@interface/TripCard/TripCard"
-import SpinnerLoading from "@component/Loading/SpinnerLoading"
-import { Button } from "@component/Form/Button"
-import { BookmarkIcon, PaperAirplaneIcon } from "@primer/octicons-react"
+  Wrapper,
+} from "./TripPackage.styled";
+import { useShowTripQuery, useTripsQuery } from "@/queries/useTripQueries";
+import Image from "@component/Image/Image";
+import { motion } from "framer-motion";
+import { Paragraph, Title } from "@component/Text";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+import TripCard from "@interface/TripCard/TripCard";
+import SpinnerLoading from "@component/Loading/SpinnerLoading";
+import { Button } from "@component/Form/Button";
+import { BookmarkIcon, PaperAirplaneIcon } from "@primer/octicons-react";
 
 const TripPackage = () => {
-  const { data, isLoading } = useShowTripQuery()
-  const trips = useTripsQuery()
+  const { data, isLoading } = useShowTripQuery();
+  const trips = useTripsQuery();
 
-  if (!data || isLoading) return <SpinnerLoading />
+  if (!data || isLoading) return <SpinnerLoading />;
   return (
     <Container>
       <ImagesStand data={data} />
       <Wrapper>
-        <Paragraph size="xl" color="yellow">
+        <Paragraph size="xl" color="secondary">
           Grupo de viagem
         </Paragraph>
-        <Title size="2xl" color="blue">
+        <Title size="2xl" color="primary">
           {data.city.name}
         </Title>
         <Info>
@@ -48,13 +48,13 @@ const TripPackage = () => {
           <Item>
             <span>Saida: </span>
             {format(new Date(data.departureDate), "dd 'de' MMMM 'de' yyyy", {
-              locale: ptBR
+              locale: ptBR,
             })}
           </Item>
           <Item>
             <span>Retorno: </span>
             {format(new Date(data.returnDate), "dd 'de' MMMM 'de' yyyy", {
-              locale: ptBR
+              locale: ptBR,
             })}
           </Item>
         </Info>
@@ -70,35 +70,33 @@ const TripPackage = () => {
         </Buttons>
       </Wrapper>
       <RelatedTrips>
-        <Title size="2xl" color="blue">
+        <Title size="2xl" color="primary">
           Mais viagens
         </Title>
         <Trips>
           {trips.data
             ?.filter((trip) => trip.id !== data.id)
-            .map((trip) => (
-              <TripCard key={trip.id} tripPackage={trip} />
-            ))}
+            .map((trip) => <TripCard key={trip.id} tripPackage={trip} />)}
         </Trips>
       </RelatedTrips>
     </Container>
-  )
-}
+  );
+};
 
 interface ImagesProps {
-  data: ITripPackage
+  data: ITripPackage;
 }
 
 const ImagesStand = ({ data }: ImagesProps) => {
-  const [imageActive, setImageActive] = React.useState(0)
+  const [imageActive, setImageActive] = React.useState(0);
 
   const handleImages = (e: React.MouseEvent) => {
-    const target = e.currentTarget
+    const target = e.currentTarget;
 
     if (target instanceof HTMLSpanElement) {
-      setImageActive(Number(target.dataset.index))
+      setImageActive(Number(target.dataset.index));
     }
-  }
+  };
 
   return (
     <Images as={motion.div}>
@@ -110,14 +108,14 @@ const ImagesStand = ({ data }: ImagesProps) => {
           layout
           transition={{
             opacity: { ease: "linear" },
-            layout: { duration: 0.4, stiffness: 100 }
+            layout: { duration: 0.4, stiffness: 100 },
           }}
         >
           <Image src={image} />
         </motion.span>
       ))}
     </Images>
-  )
-}
+  );
+};
 
-export default TripPackage
+export default TripPackage;

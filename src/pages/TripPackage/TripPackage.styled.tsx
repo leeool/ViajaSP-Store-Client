@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
@@ -10,7 +10,7 @@ export const Container = styled.div`
     grid-template-columns: 1fr;
     row-gap: 2rem;
   }
-`
+`;
 
 export const Images = styled.div`
   display: grid;
@@ -43,22 +43,22 @@ export const Images = styled.div`
       height: 25rem;
     }
   }
-`
+`;
 
 export const Wrapper = styled.div`
   display: grid;
   align-content: end;
-`
+`;
 
 export const Info = styled.div`
   display: grid;
   gap: 1rem;
-`
+`;
 
 export const RelatedTrips = styled.div`
   grid-column: 1 / -1;
   display: grid;
-`
+`;
 
 export const Trips = styled.div`
   display: flex;
@@ -71,7 +71,7 @@ export const Trips = styled.div`
     scroll-snap-align: start;
     flex: 0 0 20rem;
   }
-`
+`;
 
 export const Buttons = styled.div`
   display: flex;
@@ -83,12 +83,12 @@ export const Buttons = styled.div`
   button {
     width: 100%;
   }
-`
+`;
 
 export const Price = styled.span`
   font-size: 2.5rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.color.blue};
+  color: ${({ theme }) => theme.color.primary};
 
   span {
     font-weight: 400;
@@ -96,21 +96,21 @@ export const Price = styled.span`
     color: ${({ theme }) => theme.color.black};
     opacity: 0.5;
   }
-`
+`;
 
 export const About = styled.div`
   line-height: 1.5;
   font-size: 1.2rem;
   color: ${({ theme }) => theme.color.black};
   opacity: 0.5;
-`
+`;
 
 export const Item = styled.div`
   font-size: 1.25rem;
 
   span {
     font-size: 1.25rem;
-    color: ${({ theme }) => theme.color.blue};
+    color: ${({ theme }) => theme.color.primary};
     font-weight: 600;
   }
-`
+`;

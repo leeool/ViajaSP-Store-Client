@@ -1,19 +1,19 @@
-import styled from "styled-components"
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
+import styled from "styled-components";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
-export const Root = styled(DropdownMenu.Root)``
+export const Root = styled(DropdownMenu.Root)``;
 
 export const Trigger = styled(DropdownMenu.Trigger)`
   background: transparent;
   all: unset;
-`
+`;
 
 export const Content = styled(DropdownMenu.Content)`
-  background-color: ${({ theme }) => theme.bg.blue};
+  background-color: ${({ theme }) => theme.bg.primary};
   padding: 0.5rem;
   z-index: 100;
   border-radius: 4px;
-  border: 1px solid ${({ theme }) => theme.color.blue};
+  border: 1px solid ${({ theme }) => theme.color.primary};
   width: 12rem;
   border: 2px solid ${({ theme }) => theme.color.white100};
   overflow: hidden;
@@ -48,12 +48,12 @@ export const Content = styled(DropdownMenu.Content)`
       transform: translateY(-10px);
     }
   }
-`
+`;
 
 export const Group = styled(DropdownMenu.Group)`
   display: grid;
   gap: 0.5rem;
-`
+`;
 
 export const Label = styled(DropdownMenu.Label)`
   width: 100%;
@@ -68,7 +68,7 @@ export const Label = styled(DropdownMenu.Label)`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const Item = styled(DropdownMenu.Item)`
   padding: 0.2rem 0.6rem;
@@ -78,18 +78,18 @@ export const Item = styled(DropdownMenu.Item)`
   text-align: left;
   cursor: pointer;
   background-color: ${({ theme }) => theme.bg.white100};
-  outline: 1px solid ${({ theme }) => theme.color.blue};
-  color: ${({ theme }) => theme.color.blue};
+  outline: 1px solid ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
   display: flex;
   align-items: center;
   gap: 0.5rem;
 
   &:hover {
     color: ${({ theme }) => theme.color.black};
-    background-color: ${({ theme }) => theme.bg.yellow};
+    background-color: ${({ theme }) => theme.bg.secondary};
   }
-`
+`;
 
 export const Arrow = styled(DropdownMenu.Arrow)`
-  fill: ${({ theme }) => theme.bg.yellow};
-`
+  fill: ${({ theme }) => theme.bg.secondary};
+`;

@@ -1,45 +1,45 @@
-import React from "react"
-import { Container, Content, Logo, Wrapper } from "./Verify.styled"
-import { Paragraph, Title } from "@component/Text"
-import SpinnerLoading from "@component/Loading/SpinnerLoading"
-import { Button } from "@component/Form/Button"
-import { MailIcon } from "@primer/octicons-react"
-import { useVerifyEmail } from "@/mutations/useUserMutations"
-import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom"
+import React from "react";
+import { Container, Content, Logo, Wrapper } from "./Verify.styled";
+import { Paragraph, Title } from "@component/Text";
+import SpinnerLoading from "@component/Loading/SpinnerLoading";
+import { Button } from "@component/Form/Button";
+import { MailIcon } from "@primer/octicons-react";
+import { useVerifyEmail } from "@/mutations/useUserMutations";
+import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 
 const Verify = () => {
-  const [search] = useSearchParams()
-  const { mutate, isLoading } = useVerifyEmail()
+  const [search] = useSearchParams();
+  const { mutate, isLoading } = useVerifyEmail();
   const { token, id } = React.useMemo(() => {
-    const token = search.get("token")
-    const userId = search.get("userId")
+    const token = search.get("token");
+    const userId = search.get("userId");
 
-    return { token, id: userId }
-  }, [search])
-  const nav = useNavigate()
+    return { token, id: userId };
+  }, [search]);
+  const nav = useNavigate();
 
   const handleVerifyEmail = () => {
-    if (!token || !id) return
+    if (!token || !id) return;
 
     mutate(
       { token, id },
       {
         onSuccess: () => {
-          alert("Email verificado com sucesso!")
-          nav("/")
+          alert("Email verificado com sucesso!");
+          nav("/");
         },
         onError: () => {
-          console.log("Erro ao verificar e-mail.")
-          alert("E-mail já verificado.")
+          console.log("Erro ao verificar e-mail.");
+          alert("E-mail já verificado.");
         },
         onSettled: () => {
-          console.log("Finalizado.")
-        }
-      }
-    )
-  }
+          console.log("Finalizado.");
+        },
+      },
+    );
+  };
 
-  if (!token || !id) return <Navigate to={"/"} />
+  if (!token || !id) return <Navigate to={"/"} />;
   return (
     <Container>
       <Content>
@@ -67,7 +67,7 @@ const Verify = () => {
           </Link>
         </Logo>
         <Wrapper>
-          <Title color="blue">Bem-vindo(a) à Viaja SP</Title>
+          <Title color="primary">Bem-vindo(a) à Viaja SP</Title>
           <Paragraph size="lg" color="white400">
             Estamos empolgados em tê-lo(a) como parte da nossa comunidade de
             viajantes. Prepare-se para embarcar em aventuras emocionantes e
@@ -95,7 +95,7 @@ const Verify = () => {
         </Wrapper>
       </Content>
     </Container>
-  )
-}
+  );
+};
 
-export default Verify
+export default Verify;

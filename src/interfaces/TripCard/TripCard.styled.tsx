@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ export const Container = styled.div`
     transition: height 0.2s ease-in-out;
     justify-self: start;
   }
-`
+`;
 
 export const Content = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ export const Content = styled.div`
   gap: 0.5rem;
 
   h3 {
-    color: ${({ theme }) => theme.color.blue};
+    color: ${({ theme }) => theme.color.primary};
   }
 
   h3,
@@ -64,11 +64,11 @@ export const Content = styled.div`
       padding: 0.4rem 0.5rem;
     }
   }
-`
+`;
 
 export const Price = styled.p`
   font-size: 1rem;
   color: ${({ theme }) => theme.color.black};
   opacity: 0.6;
   flex: 1;
-`
+`;

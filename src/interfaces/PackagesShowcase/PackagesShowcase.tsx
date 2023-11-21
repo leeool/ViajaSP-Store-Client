@@ -1,30 +1,30 @@
-import SlideShow, { SlideItem } from "@component/SlideShow/SlideShow"
-import React from "react"
-import { Container, Content, Info, Tag } from "./PackagesShowcase.styled"
-import { useQuery } from "react-query"
-import axiosInstance from "@/API/axiosInstance"
-import Image from "@component/Image/Image"
-import { Title } from "@component/Text"
-import useStore from "@/stores/useStore"
-import Skeleton from "react-loading-skeleton"
-import "react-loading-skeleton/dist/skeleton.css"
-import { Link } from "react-router-dom"
+import SlideShow, { SlideItem } from "@component/SlideShow/SlideShow";
+import React from "react";
+import { Container, Content, Info, Tag } from "./PackagesShowcase.styled";
+import { useQuery } from "react-query";
+import axiosInstance from "@/API/axiosInstance";
+import Image from "@component/Image/Image";
+import { Title } from "@component/Text";
+import useStore from "@/stores/useStore";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { Link } from "react-router-dom";
 
 const PackagesShowcase = () => {
   const { data, isLoading } = useQuery<ITripPackage[] | []>({
     queryKey: "tripPackages",
     queryFn: async () => {
-      return axiosInstance.get("/trip-package").then((res) => res.data)
-    }
-  })
-  const setLoading = useStore((state) => state.setLoading)
+      return axiosInstance.get("/trip-package").then((res) => res.data);
+    },
+  });
+  const setLoading = useStore((state) => state.setLoading);
 
   React.useEffect(() => {
-    console.log(isLoading)
-    setLoading(isLoading)
-  }, [isLoading, setLoading])
+    console.log(isLoading);
+    setLoading(isLoading);
+  }, [isLoading, setLoading]);
 
-  if (!data || isLoading) return null
+  if (!data || isLoading) return null;
   return (
     <Container>
       <Tag>Imperdível!</Tag>
@@ -35,7 +35,7 @@ const PackagesShowcase = () => {
               <Image src={tripPackage?.city.images[0]} />
               <Info className="info">
                 <p>Pacote família para</p>
-                <Title size="2xl" color="yellow">
+                <Title size="2xl" color="secondary">
                   {tripPackage?.city.name || <Skeleton />}
                 </Title>
                 <p>
@@ -50,7 +50,7 @@ const PackagesShowcase = () => {
         ))}
       </SlideShow>
     </Container>
-  )
-}
+  );
+};
 
-export default PackagesShowcase
+export default PackagesShowcase;

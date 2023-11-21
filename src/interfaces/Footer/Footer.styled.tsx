@@ -1,7 +1,7 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.bg.blue};
+  background-color: ${({ theme }) => theme.bg.primary};
   padding: 1rem 3rem;
   padding-bottom: 3rem;
   display: flex;
@@ -14,7 +14,7 @@ export const Container = styled.div`
   @media (max-width: 768px) {
     padding: 1rem;
   }
-`
+`;
 
 export const Logo = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ export const Logo = styled.div`
   gap: 0.5rem;
   color: ${({ theme }) => theme.color.white100};
   align-self: flex-start;
-`
+`;
 
 export const Content = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ export const Content = styled.div`
   gap: 2rem;
   flex: 1;
   max-width: 60rem;
-`
+`;
 
 export const Item = styled.div`
   color: ${({ theme }) => theme.color.white100};
@@ -41,4 +41,4 @@ export const Item = styled.div`
   p {
     opacity: 0.8;
   }
-`
+`;

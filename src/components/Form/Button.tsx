@@ -1,13 +1,13 @@
-import styled from "styled-components"
-import { variant } from "styled-system"
+import styled from "styled-components";
+import { variant } from "styled-system";
 
 interface Props {
-  variant?: "primary" | "secondary"
-  shape?: "rounded" | "circle"
+  variant?: "primary" | "secondary";
+  shape?: "rounded" | "circle";
 }
 
 export const Button = styled.button<Props>`
-  background-color: ${({ theme }) => theme.bg.blue};
+  background-color: ${({ theme }) => theme.bg.primary};
   color: ${({ theme }) => theme.color.white100};
   padding: 0.4rem 1.5rem;
   border-radius: 2rem;
@@ -42,28 +42,28 @@ export const Button = styled.button<Props>`
     variants: {
       primary: {
         backgroundColor: "transparent",
-        color: "#fff"
+        color: "#fff",
       },
       secondary: {
         backgroundColor: "#fff",
-        border: "2px solid #014AAD ",
+        border: "2px solid #014AAD",
         color: "#014AAD",
         "&:hover": {
-          backgroundColor: "#f0f0f0"
-        }
-      }
-    }
+          backgroundColor: "#f0f0f0",
+        },
+      },
+    },
   })}
 
   ${variant({
     prop: "shape",
     variants: {
       rounded: {
-        borderRadius: "0.5rem"
+        borderRadius: "0.5rem",
       },
       circle: {
-        borderRadius: "2rem"
-      }
-    }
+        borderRadius: "2rem",
+      },
+    },
   })}
-`
+`;

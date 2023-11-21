@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.bg.blue};
+  background-color: ${({ theme }) => theme.bg.primary};
   color: ${({ theme }) => theme.color.white100};
   padding: 1rem 3rem;
   display: flex;
@@ -14,14 +14,14 @@ export const Container = styled.div`
   @media (max-width: 768px) {
     padding: 1rem;
   }
-`
+`;
 
 export const VerifyAccount = styled.div`
   position: absolute;
   left: 0;
   top: 100%;
   width: 100%;
-  background-color: ${({ theme }) => theme.bg.yellow};
+  background-color: ${({ theme }) => theme.bg.secondary};
   color: ${({ theme }) => theme.color.black};
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -41,7 +41,7 @@ export const VerifyAccount = styled.div`
       text-decoration: underline;
     }
   }
-`
+`;
 
 export const Logo = styled.div`
   display: flex;
@@ -58,9 +58,9 @@ export const Logo = styled.div`
       display: none;
     }
   }
-`
+`;
 
 export const Nav = styled.nav`
   display: flex;
   gap: 1rem;
-`
+`;

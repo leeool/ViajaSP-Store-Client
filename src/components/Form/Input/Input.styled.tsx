@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { variant } from "styled-system"
+import styled from "styled-components";
+import { variant } from "styled-system";
 
 export const Container = styled.div`
   display: flex;
@@ -7,11 +7,11 @@ export const Container = styled.div`
   gap: 0.5rem;
   position: relative;
   width: 100%;
-`
+`;
 
 export const Label = styled.label`
   color: #fff;
-`
+`;
 
 export const InputContainer = styled.input`
   width: 100%;
@@ -22,7 +22,7 @@ export const InputContainer = styled.input`
   color: #fff;
 
   &:focus {
-    outline-color: ${({ theme }) => theme.color.yellow};
+    outline-color: ${({ theme }) => theme.color.secondary};
   }
 
   &[data-invalid="true"] {
@@ -40,32 +40,32 @@ export const InputContainer = styled.input`
         backgroundColor: "#00000050",
         outlineColor: "#fff",
         "&:focus": {
-          outlineColor: "#f04d4d"
+          outlineColor: "#f04d4d",
         },
         "&[data-invalid='true']": {
-          outlineColor: "#f04d4d"
+          outlineColor: "#f04d4d",
         },
         "&:disabled": {
-          cursor: "wait"
-        }
+          cursor: "wait",
+        },
       },
       secondary: {
         color: "#000",
         backgroundColor: "#fff",
         outlineColor: "#000",
         "&:focus": {
-          outlineColor: "#f04d4d"
+          outlineColor: "#f04d4d",
         },
         "&[data-invalid='true']": {
-          outlineColor: "#f04d4d"
+          outlineColor: "#f04d4d",
         },
         "&:disabled": {
-          cursor: "wait"
-        }
-      }
-    }
+          cursor: "wait",
+        },
+      },
+    },
   })}
-`
+`;
 
 export const Loading = styled.div`
   position: absolute;
@@ -73,4 +73,4 @@ export const Loading = styled.div`
   bottom: 13%;
   width: 1.25rem;
   height: 1.25rem;
-`
+`;

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
@@ -13,7 +13,7 @@ export const Container = styled.div`
   h1 {
     text-align: center;
   }
-`
+`;
 
 export const Logo = styled.div`
   display: grid;
@@ -21,7 +21,7 @@ export const Logo = styled.div`
   place-self: center;
   width: 100%;
   padding: 5rem;
-  background-color: ${({ theme }) => theme.bg.blue};
+  background-color: ${({ theme }) => theme.bg.primary};
 
   span,
   a {
@@ -33,7 +33,7 @@ export const Logo = styled.div`
     gap: 0.5rem;
     color: ${({ theme }) => theme.color.white100};
   }
-`
+`;
 
 export const Content = styled.div`
   display: grid;
@@ -47,7 +47,7 @@ export const Content = styled.div`
 
     max-width: 100px;
   }
-`
+`;
 
 export const Wrapper = styled.div`
   display: grid;
@@ -55,4 +55,4 @@ export const Wrapper = styled.div`
   padding: 2rem;
 
   justify-items: center;
-`
+`;

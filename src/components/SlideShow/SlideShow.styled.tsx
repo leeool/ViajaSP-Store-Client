@@ -1,11 +1,11 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const SlideContainer = styled.div`
   .react-slideshow-container {
     border-radius: 1rem;
     overflow: hidden;
   }
-`
+`;
 
 export const Item = styled.div`
   img {
@@ -13,7 +13,7 @@ export const Item = styled.div`
     height: 30rem;
     object-fit: cover;
   }
-`
+`;
 
 export const Arrow = styled.div`
   padding: 0 0.5rem;
@@ -25,7 +25,7 @@ export const Arrow = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid ${({ theme }) => theme.bg.blue};
+    border: 2px solid ${({ theme }) => theme.bg.primary};
 
     svg {
       width: 100%;
@@ -36,4 +36,4 @@ export const Arrow = styled.div`
       stroke-width: 5px;
     }
   }
-`
+`;

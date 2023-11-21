@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   margin-top: 5rem;
@@ -6,7 +6,7 @@ export const Container = styled.div`
   @media (max-width: 900px) {
     margin-top: 1rem;
   }
-`
+`;
 
 export const Section1 = styled.div`
   display: grid;
@@ -38,10 +38,10 @@ export const Section1 = styled.div`
       display: none;
     }
   }
-`
+`;
 
 export const SectionBar = styled.div`
-  background-color: ${({ theme }) => theme.bg.blue};
+  background-color: ${({ theme }) => theme.bg.primary};
   border-radius: 0.25rem;
   padding: 1rem;
   color: ${({ theme }) => theme.color.white100};
@@ -68,13 +68,13 @@ export const SectionBar = styled.div`
       display: none;
     }
   }
-`
+`;
 
 export const SectionTeam = styled.div`
   margin-top: 5rem;
   display: grid;
   gap: 1rem;
-`
+`;
 
 export const TeamCard = styled.div`
   display: grid;
@@ -87,11 +87,11 @@ export const TeamCard = styled.div`
     object-fit: cover;
     border-radius: 0.25rem;
   }
-`
+`;
 
 export const TeamContent = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-`
+`;

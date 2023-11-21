@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
-`
+`;
 
 export const Tag = styled.span`
   position: absolute;
@@ -12,9 +12,9 @@ export const Tag = styled.span`
   width: fit-content;
   height: fit-content;
   padding: 0.3rem 1rem;
-  background-color: ${({ theme }) => theme.bg.yellow};
+  background-color: ${({ theme }) => theme.bg.secondary};
   z-index: 10;
-  color: ${({ theme }) => theme.color.blue};
+  color: ${({ theme }) => theme.color.primary};
   font-weight: 600;
   text-transform: uppercase;
 
@@ -25,7 +25,7 @@ export const Tag = styled.span`
     top: 0;
     border-style: solid;
     border-width: 0 0px 30px 30px;
-    border-color: transparent transparent ${({ theme }) => theme.bg.yellow}
+    border-color: transparent transparent ${({ theme }) => theme.bg.secondary}
       transparent;
     transform: rotate(0deg);
   }
@@ -37,10 +37,10 @@ export const Tag = styled.span`
     border-style: solid;
     border-width: 30px 0 0px 30px;
     border-color: transparent transparent transparent
-      ${({ theme }) => theme.bg.yellow};
+      ${({ theme }) => theme.bg.secondary};
     transform: rotate(0deg);
   }
-`
+`;
 
 export const Content = styled.div`
   display: grid;
@@ -51,7 +51,8 @@ export const Content = styled.div`
 
   &::after {
     content: "";
-    box-shadow: inset 250px 0px 200px 0px rgba(0, 0, 0, 0.6),
+    box-shadow:
+      inset 250px 0px 200px 0px rgba(0, 0, 0, 0.6),
       inset -50px 0px 100px 0px rgba(0, 0, 0, 0.6);
     display: block;
     height: 100%;
@@ -65,7 +66,9 @@ export const Content = styled.div`
   img,
   .skeleton-image-container {
     grid-area: 1 / -1;
-    transition: scale 0.3s ease-in-out, opacity 0.5s ease;
+    transition:
+      scale 0.3s ease-in-out,
+      opacity 0.5s ease;
   }
 
   &:hover img {
@@ -86,11 +89,12 @@ export const Content = styled.div`
     }
 
     &::after {
-      box-shadow: inset 100px -50px 100px 0px rgba(0, 0, 0, 0.6),
+      box-shadow:
+        inset 100px -50px 100px 0px rgba(0, 0, 0, 0.6),
         inset -25px 0px 50px 0px rgba(0, 0, 0, 0.6);
     }
   }
-`
+`;
 export const Info = styled.div`
   grid-area: 1 / -1;
   align-self: end;
@@ -112,11 +116,11 @@ export const Info = styled.div`
 
   .price {
     font-size: 1.6em;
-    color: ${({ theme }) => theme.bg.yellow};
+    color: ${({ theme }) => theme.bg.secondary};
     font-weight: 600;
   }
 
   @media (max-width: 768px) {
     padding: 1rem;
   }
-`
+`;
