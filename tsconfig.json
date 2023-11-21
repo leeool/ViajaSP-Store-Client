@@ -2,10 +2,13 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -13,27 +16,46 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
     /* Linting */
     "strict": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-
     "baseUrl": ".",
     "removeComments": true,
-
     "paths": {
-      "@component/*": ["./src/components/*"],
-      "@page/*": ["./src/pages/*"],
-      "@store/*": ["./src/store/*"],
-      "@type/*": ["./src/types/*"],
-      "@style/*": ["./src/styles/*"],
-      "@interface/*": ["./src/interfaces/*"],
-      "@hook/*": ["./src/hooks/*"],
-      "@asset/*": ["./src/assets/*"],
-      "@/*": ["./src/*"]
+      "@component/*": [
+        "./src/components/*"
+      ],
+      "@page/*": [
+        "./src/pages/*"
+      ],
+      "@store/*": [
+        "./src/store/*"
+      ],
+      "@type/*": [
+        "./src/types/*"
+      ],
+      "@style/*": [
+        "./src/styles/*"
+      ],
+      "@interface/*": [
+        "./src/interfaces/*"
+      ],
+      "@hook/*": [
+        "./src/hooks/*"
+      ],
+      "@asset/*": [
+        "./src/assets/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }
