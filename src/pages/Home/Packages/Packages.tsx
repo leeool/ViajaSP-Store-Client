@@ -1,20 +1,14 @@
-import axiosInstance from "@/API/axiosInstance";
 import TripCard from "@interface/TripCard/TripCard";
 import React from "react";
-import { useQuery } from "react-query";
 import { Paragraph, Title } from "@component/Text";
 import { BriefcaseIcon } from "@primer/octicons-react";
 import { Container, PackageContainer } from "./Packages.styled";
 
-export const Packages = () => {
-  const { data, isLoading } = useQuery<ITripPackage[]>({
-    queryKey: ["packages"],
-    queryFn: () => {
-      return axiosInstance.get("/trip-package").then((res) => res.data);
-    },
-  });
+interface Props {
+  data: ITripPackage[];
+}
 
-  if (isLoading) return null;
+export const Packages = ({ data }: Props) => {
   return (
     <Container>
       <div>

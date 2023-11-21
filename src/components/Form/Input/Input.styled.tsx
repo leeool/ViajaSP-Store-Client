@@ -16,13 +16,13 @@ export const Label = styled.label`
 export const InputContainer = styled.input`
   width: 100%;
   padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   background-color: #00000050;
   outline: 2px solid #fff;
   color: #fff;
 
   &:focus {
-    outline-color: ${({ theme }) => theme.color.secondary};
+    outline-color: ${({ theme }) => theme.color.primary};
   }
 
   &[data-invalid="true"] {
@@ -34,37 +34,37 @@ export const InputContainer = styled.input`
   }
 
   ${variant({
-    variants: {
-      primary: {
-        color: "#fff",
-        backgroundColor: "#00000050",
-        outlineColor: "#fff",
-        "&:focus": {
-          outlineColor: "#f04d4d",
-        },
-        "&[data-invalid='true']": {
-          outlineColor: "#f04d4d",
-        },
-        "&:disabled": {
-          cursor: "wait",
-        },
+  variants: {
+    primary: {
+      color: "#fff",
+      backgroundColor: "#00000050",
+      outlineColor: "#fff",
+      "&:focus": {
+        outlineColor: "#f04d4d",
       },
-      secondary: {
-        color: "#000",
-        backgroundColor: "#fff",
-        outlineColor: "#000",
-        "&:focus": {
-          outlineColor: "#f04d4d",
-        },
-        "&[data-invalid='true']": {
-          outlineColor: "#f04d4d",
-        },
-        "&:disabled": {
-          cursor: "wait",
-        },
+      "&[data-invalid='true']": {
+        outlineColor: "#f04d4d",
+      },
+      "&:disabled": {
+        cursor: "wait",
       },
     },
-  })}
+    secondary: {
+      color: "#000",
+      backgroundColor: "#fff",
+      outlineColor: "#000",
+      "&:focus": {
+        outlineColor: "#f04d4d",
+      },
+      "&[data-invalid='true']": {
+        outlineColor: "#f04d4d",
+      },
+      "&:disabled": {
+        cursor: "wait",
+      },
+    },
+  },
+})}
 `;
 
 export const Loading = styled.div`

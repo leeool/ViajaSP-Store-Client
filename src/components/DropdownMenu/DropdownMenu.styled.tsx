@@ -9,13 +9,13 @@ export const Trigger = styled(DropdownMenu.Trigger)`
 `;
 
 export const Content = styled(DropdownMenu.Content)`
-  background-color: ${({ theme }) => theme.bg.primary};
-  padding: 0.5rem;
+  background-color: #fff;
   z-index: 100;
-  border-radius: 4px;
-  border: 1px solid ${({ theme }) => theme.color.primary};
-  width: 12rem;
-  border: 2px solid ${({ theme }) => theme.color.white100};
+  border-radius: 0.25rem;
+  box-shadow:
+    10px 10px 10px -3px rgba(0, 0, 0, 0.1),
+    -10px -10px 10px -3px rgba(0, 0, 0, 0.1);
+  width: 15rem;
   overflow: hidden;
   transition: height 0.2s ease-in-out;
 
@@ -52,7 +52,6 @@ export const Content = styled(DropdownMenu.Content)`
 
 export const Group = styled(DropdownMenu.Group)`
   display: grid;
-  gap: 0.5rem;
 `;
 
 export const Label = styled(DropdownMenu.Label)`
@@ -72,21 +71,19 @@ export const Label = styled(DropdownMenu.Label)`
 
 export const Item = styled(DropdownMenu.Item)`
   padding: 0.2rem 0.6rem;
-  border-radius: 4px;
   font-size: 1.1rem;
   font-weight: 600;
   text-align: left;
   cursor: pointer;
-  background-color: ${({ theme }) => theme.bg.white100};
-  outline: 1px solid ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.primary};
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  outline: none;
+  padding: 1rem 3rem;
 
   &:hover {
-    color: ${({ theme }) => theme.color.black};
-    background-color: ${({ theme }) => theme.bg.secondary};
+    background-color: ${({ theme }) => theme.bg.white200};
   }
 `;
 

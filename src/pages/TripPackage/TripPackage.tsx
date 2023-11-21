@@ -18,20 +18,21 @@ import { Paragraph, Title } from "@component/Text";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import TripCard from "@interface/TripCard/TripCard";
-import SpinnerLoading from "@component/Loading/SpinnerLoading";
 import { Button } from "@component/Form/Button";
 import { BookmarkIcon, PaperAirplaneIcon } from "@primer/octicons-react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const TripPackage = () => {
   const { data, isLoading } = useShowTripQuery();
   const trips = useTripsQuery();
 
-  if (!data || isLoading) return <SpinnerLoading />;
+  if (!data || isLoading) return <PageLoading />;
   return (
     <Container>
       <ImagesStand data={data} />
       <Wrapper>
-        <Paragraph size="xl" color="secondary">
+        <Paragraph size="xl" color="white400">
           Grupo de viagem
         </Paragraph>
         <Title size="2xl" color="primary">
@@ -39,14 +40,12 @@ const TripPackage = () => {
         </Title>
         <Info>
           <About color="white400">{data.city.about}</About>
-          <Price>
-            R${data.price},00 <span>(pacote família)</span>
-          </Price>
+          <Price>R$ {data.price.toLocaleString("pt-BR")}</Price>
           <Item>
             <span>Transporte:</span> {data.transport}
           </Item>
           <Item>
-            <span>Saida: </span>
+            <span>Saída: </span>
             {format(new Date(data.departureDate), "dd 'de' MMMM 'de' yyyy", {
               locale: ptBR,
             })}
@@ -61,11 +60,11 @@ const TripPackage = () => {
         <Buttons>
           <Button shape="rounded" variant="secondary">
             Favoritar
-            <BookmarkIcon size={18} />
+            <BookmarkIcon size={24} />
           </Button>
           <Button shape="rounded">
             Reservar
-            <PaperAirplaneIcon size={18} />
+            <PaperAirplaneIcon size={24} />
           </Button>
         </Buttons>
       </Wrapper>
@@ -118,4 +117,19 @@ const ImagesStand = ({ data }: ImagesProps) => {
   );
 };
 
+const PageLoading = () => {
+  return (
+    <Container>
+      <div>
+        <Skeleton height={"33rem"} width={"100%"} />
+      </div>
+      <div style={{ display: "grid", gap: "1rem", alignSelf: "end" }}>
+        <Skeleton count={2} height={"2rem"} width={"50%"} />
+        <Skeleton count={1} height={"10rem"} />
+        <Skeleton count={1} height={"5rem"} />
+        <Skeleton count={1} height={"5rem"} width={"50%"} />
+      </div>
+    </Container>
+  );
+};
 export default TripPackage;

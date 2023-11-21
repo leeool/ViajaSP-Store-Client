@@ -1,47 +1,47 @@
-import { Button } from "@component/Form/Button"
-import Input from "@component/Form/Input/Input"
-import { Title } from "@component/Text"
-import { ArrowRightIcon } from "@primer/octicons-react"
-import React from "react"
-import { Controller, useForm } from "react-hook-form"
-import { Container } from "./EmailCheck.styled"
-import { useMutation } from "react-query"
-import axiosInstance from "@/API/axiosInstance"
-import useLoginStore from "@/stores/useLoginStore"
-import { AxiosError } from "axios"
+import { Button } from "@component/Form/Button";
+import Input from "@component/Form/Input/Input";
+import { Title } from "@component/Text";
+import { ArrowRightIcon } from "@primer/octicons-react";
+import React from "react";
+import { Controller, useForm } from "react-hook-form";
+import { Container } from "./EmailCheck.styled";
+import { useMutation } from "react-query";
+import axiosInstance from "@/API/axiosInstance";
+import useLoginStore from "@/stores/useLoginStore";
+import { AxiosError } from "axios";
 
 const EmailCheck = () => {
-  const setStage = useLoginStore((state) => state.setStage)
-  const setEmail = useLoginStore((state) => state.setEmail)
-  const email = useLoginStore((state) => state.email)
-  const { handleSubmit, control, getValues } = useForm()
+  const setStage = useLoginStore((state) => state.setStage);
+  const setEmail = useLoginStore((state) => state.setEmail);
+  const email = useLoginStore((state) => state.email);
+  const { handleSubmit, control, getValues } = useForm();
   const { mutate, isLoading } = useMutation<ICustomer>({
     mutationKey: ["checkEmail", getValues("email")],
     mutationFn: async () => {
       return axiosInstance
         .get(`/customer?email=${getValues("email")}`)
-        .then((res) => res.data)
-    }
-  })
+        .then((res) => res.data);
+    },
+  });
 
   const handleCheckEmail = handleSubmit((data) => {
-    setEmail(data.email)
+    setEmail(data.email);
 
     mutate(undefined, {
       onSuccess: (data) => {
         if (data) {
-          setStage("signIn")
+          setStage("signIn");
         } else {
-          setStage("signUp")
+          setStage("signUp");
         }
       },
       onError: (error) => {
         if (error instanceof AxiosError) {
-          console.log(error.response?.data.error)
+          console.log(error.response?.data.error);
         }
-      }
-    })
-  })
+      },
+    });
+  });
 
   return (
     <Container onSubmit={handleCheckEmail}>
@@ -63,12 +63,12 @@ const EmailCheck = () => {
         )}
       />
 
-      <Button variant="secondary" disabled={isLoading}>
+      <Button variant="primary" shape="rounded" disabled={isLoading}>
         Avançar
         <ArrowRightIcon size={18} />
       </Button>
     </Container>
-  )
-}
+  );
+};
 
-export default EmailCheck
+export default EmailCheck;

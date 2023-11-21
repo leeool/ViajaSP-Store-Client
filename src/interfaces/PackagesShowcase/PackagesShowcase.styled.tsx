@@ -12,9 +12,9 @@ export const Tag = styled.span`
   width: fit-content;
   height: fit-content;
   padding: 0.3rem 1rem;
-  background-color: ${({ theme }) => theme.bg.secondary};
+  background-color: ${({ theme }) => theme.bg.primary};
   z-index: 10;
-  color: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.white100};
   font-weight: 600;
   text-transform: uppercase;
 
@@ -25,7 +25,7 @@ export const Tag = styled.span`
     top: 0;
     border-style: solid;
     border-width: 0 0px 30px 30px;
-    border-color: transparent transparent ${({ theme }) => theme.bg.secondary}
+    border-color: transparent transparent ${({ theme }) => theme.bg.primary}
       transparent;
     transform: rotate(0deg);
   }
@@ -37,7 +37,7 @@ export const Tag = styled.span`
     border-style: solid;
     border-width: 30px 0 0px 30px;
     border-color: transparent transparent transparent
-      ${({ theme }) => theme.bg.secondary};
+      ${({ theme }) => theme.bg.primary};
     transform: rotate(0deg);
   }
 `;
@@ -115,8 +115,8 @@ export const Info = styled.div`
   }
 
   .price {
-    font-size: 1.6em;
-    color: ${({ theme }) => theme.bg.secondary};
+    font-size: 3rem;
+    color: ${({ theme }) => theme.color.primary};
     font-weight: 600;
   }
 

@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    align-content: center;
+    // align-content: space-between;
     gap: 1rem;
   }
 `;
@@ -29,7 +29,7 @@ export const Column1 = styled.div`
   h1 span {
     display: inline;
     font-size: inherit;
-    color: ${({ theme }) => theme.color.secondary};
+    color: ${({ theme }) => theme.color.primary};
   }
 
   h1 {

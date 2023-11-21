@@ -1,21 +1,23 @@
-import useUserStore from "@/stores/useUserStore"
+import useUserStore from "@/stores/useUserStore";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuTrigger
-} from "@component/DropdownMenu/DropdownMenu"
-import { Button } from "@component/Form/Button"
-import React from "react"
+  DropdownMenuTrigger,
+} from "@component/DropdownMenu/DropdownMenu";
+import { Button } from "@component/Form/Button";
+import React from "react";
 
 const Menu = () => {
-  const logout = useUserStore((state) => state.userLogout)
+  const logout = useUserStore((state) => state.userLogout);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Button variant="secondary">Minha conta</Button>
+        <Button variant="primary" shape="rounded">
+          Minha conta
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
@@ -24,7 +26,7 @@ const Menu = () => {
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

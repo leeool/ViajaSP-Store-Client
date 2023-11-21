@@ -1,15 +1,18 @@
-import { create } from "zustand"
+import { create } from "zustand";
 
 interface Props {
-  userData: ICustomer | null
-  setUserData: (userData: ICustomer) => void
-  userLogout: () => void
+  userData: ICustomer | null;
+  setUserData: (userData: ICustomer) => void;
+  userLogout: () => void;
 }
 
 const useUserStore = create<Props>((set) => ({
   userData: null,
   setUserData: (userData) => set({ userData }),
-  userLogout: () => set({ userData: null })
-}))
+  userLogout: () => {
+    set({ userData: null });
+    localStorage.removeItem("token");
+  },
+}));
 
-export default useUserStore
+export default useUserStore;

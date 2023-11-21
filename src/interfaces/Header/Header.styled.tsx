@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.bg.primary};
+  background-color: ${({ theme }) => theme.bg.secondary};
   color: ${({ theme }) => theme.color.white100};
   padding: 1rem 3rem;
   display: flex;
@@ -21,8 +21,8 @@ export const VerifyAccount = styled.div`
   left: 0;
   top: 100%;
   width: 100%;
-  background-color: ${({ theme }) => theme.bg.secondary};
-  color: ${({ theme }) => theme.color.black};
+  background-color: ${({ theme }) => theme.bg.primary};
+  color: ${({ theme }) => theme.color.white100};
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -43,15 +43,10 @@ export const VerifyAccount = styled.div`
   }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.img`
   display: flex;
   align-items: center;
-
-  span {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 500;
-  }
-  gap: 0.5rem;
+  width: 50%;
 
   @media (max-width: 400px) {
     span {

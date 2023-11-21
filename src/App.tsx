@@ -1,25 +1,25 @@
-import Footer from "@interface/Footer/Footer"
-import Header from "@interface/Header/Header"
-import { Container, MainContainer } from "@style/Styled"
-import React from "react"
-import { Outlet } from "react-router-dom"
-import { useMeMutation } from "./mutations/useUserMutations"
-import ScrollToTop from "./helpers/ScrollToTop"
+import Footer from "@interface/Footer/Footer";
+import Header from "@interface/Header/Header";
+import { Container, MainContainer } from "@style/Styled";
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { useMeMutation } from "./mutations/useUserMutations";
+import ScrollToTop from "./helpers/ScrollToTop";
 
 const App = () => {
-  const me = useMeMutation()
+  const me = useMeMutation();
 
   React.useEffect(() => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token");
 
-    if (!token) return
+    if (!token) return;
 
     me.mutate(undefined, {
-      onSuccess: (data) => {
-        console.log(data)
-      }
-    })
-  }, [])
+      onError: () => {
+        localStorage.removeItem("token");
+      },
+    });
+  }, []);
 
   return (
     <MainContainer>
@@ -31,7 +31,7 @@ const App = () => {
       </Container>
       <Footer />
     </MainContainer>
-  )
-}
+  );
+};
 
-export default App
+export default App;

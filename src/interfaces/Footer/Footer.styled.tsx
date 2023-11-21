@@ -1,37 +1,35 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.bg.primary};
+  background-color: ${({ theme }) => theme.bg.secondary};
   padding: 1rem 3rem;
   padding-bottom: 3rem;
   display: flex;
   justify-content: space-between;
   margin-top: 5rem;
   gap: 5rem;
-  z-index: 100;
-  flex-wrap: wrap;
 
   @media (max-width: 768px) {
     padding: 1rem;
+    gap: 2rem;
+    flex-wrap: wrap;
   }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.img`
   display: flex;
   align-items: center;
-  font-size: 2rem;
-  font-weight: 500;
-  gap: 0.5rem;
-  color: ${({ theme }) => theme.color.white100};
   align-self: flex-start;
+  max-width: 15rem;
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  flex: 1;
-  max-width: 60rem;
+  max-width: 50rem;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 export const Item = styled.div`

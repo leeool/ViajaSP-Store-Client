@@ -1,16 +1,17 @@
-import React from "react"
-import ReactLoading from "react-loading"
+import theme from "@style/Theme";
+import React from "react";
+import ReactLoading from "react-loading";
 
 const SpinnerLoading = () => {
   return (
     <ReactLoading
       type="spin"
-      color="#F8BC00"
+      color={theme.bg.primary}
       height={"100%"}
       width={"100%"}
       className="loading"
     />
-  )
-}
+  );
+};
 
-export default SpinnerLoading
+export default SpinnerLoading;

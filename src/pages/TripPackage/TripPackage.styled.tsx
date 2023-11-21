@@ -5,10 +5,12 @@ export const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
   row-gap: 5rem;
+  margin-top: 3rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     row-gap: 2rem;
+    margin-top: 1rem;
   }
 `;
 
